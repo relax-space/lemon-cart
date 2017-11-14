@@ -1,0 +1,15 @@
+- id: 1
+  list_price: 12
+  sale_price: 20
+  quantity: 100
+  items: 
+    - id: 1
+      cart_id: 1
+      quantity: 10
+      list_price: 11
+      sale_price: 21
+      discount: 5
+      sku: 
+       id: 1
+       name: "beef"
+       list_price: 25
