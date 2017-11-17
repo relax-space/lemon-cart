@@ -1,4 +1,13 @@
-- id: 1
+- id: 0
   name: "beef"
-  list_price: 100
+  listprice: 6
+  saleprice: 5
+- id: 0
+  name: "apple"
+  listprice: 4
+  saleprice: 3
+- id: 0
+  name: "phone"
+  listprice: 2
+  saleprice: 1
   

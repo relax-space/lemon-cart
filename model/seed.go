@@ -1,19 +1,24 @@
 package model
 
-import "io/ioutil"
-import "gopkg.in/yaml.v2"
+import (
+	"fmt"
+	"io/ioutil"
 
-// func seed_cart(path string) {
-// 	data, err := ioutil.ReadFile(path)
-// 	if err != nil {
-// 		panic(err)
-// 	}
-// 	var carts []Cart
-// 	if err := yaml.Unmarshal(data, &carts); err != nil {
-// 		panic(err)
-// 	}
-// 	CreateCart(carts)
-// }
+	"gopkg.in/yaml.v2"
+)
+
+func seed_cart(path string) {
+	data, err := ioutil.ReadFile(path)
+	if err != nil {
+		panic(err)
+	}
+	var carts []Cart
+	if err := yaml.Unmarshal(data, &carts); err != nil {
+		panic(err)
+	}
+	fmt.Println(carts)
+	Cart{}.CreateCarts(carts)
+}
 
 func seed_sku(path string) {
 	data, err := ioutil.ReadFile(path)
@@ -24,5 +29,21 @@ func seed_sku(path string) {
 	if err := yaml.Unmarshal(data, &dtos); err != nil {
 		panic(err)
 	}
-	CreateSku(dtos)
+	Sku{}.CreateSkus(dtos)
+}
+
+func Seed_cart(path string) {
+	Cart{}.CreateCart()
+}
+
+func Seed_sku(path string) {
+	data, err := ioutil.ReadFile(path)
+	if err != nil {
+		panic(err)
+	}
+	var dtos []Sku
+	if err := yaml.Unmarshal(data, &dtos); err != nil {
+		panic(err)
+	}
+	Sku{}.CreateSkus(dtos)
 }
